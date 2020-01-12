@@ -1,0 +1,64 @@
+.Menu
+{
+  border: 3px solid #ffde22;
+  width: 20%;
+  height: auto;
+  max-height: 800px;
+  padding-bottom: 25%;
+  margin-top: 3%;
+  background-color: #ffd633;
+}
+
+hr
+{
+  margin-top: 2%;
+  border: 3px solid  #ff751a;
+}
+
+#logout
+{
+  color: white;
+  background-color: #ff751a;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5em 0.9em;
+  margin-left: 90%;
+}
+
+img
+{
+  margin-left: 45%;
+}
+
+h1
+{
+  color: black;
+  font-size: 15px;
+}
+
+section
+{
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+section ul
+{
+  display:none;
+  list-style-type: square;
+}
+section a
+{
+  text-align: centre;
+  text-decoration: none;
+}
+
+section a:hover
+{
+  text-decoration: underline;
+}
+
+section:target ul
+{
+  display:block;
+}

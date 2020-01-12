@@ -4,7 +4,8 @@ h1
   margin-left: 38%;
   margin-right: 40%;
   padding: 10px;
-  border: 10px solid #f1f1f1;
+  border: 10px solid #ffde22;
+  border-style:outset;
   color: #ff751a;
   text-align: center;
 }
