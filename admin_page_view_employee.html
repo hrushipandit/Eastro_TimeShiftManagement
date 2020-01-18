@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="style_admin_page_view_employee.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Saira&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+   <img src="logo.png" alt="Smiley face" height=76 width=216>
+   <div class="logout">
+     <a href="login.html" class="button" id="logout"> Log Out </a>
+     <hr>
+   </div>
+
+   <h1 id="title"> Search By Employee </h1>
+
+    <div class="Menu">
+      <section id="Department">
+        <a href=#Department> <h1> Assign Tasks <h1> </a>
+        <ul>
+          <li><a href="admin_page_project.html"> Project </a> </li>
+          <li><a href="admin_page_HR.html"> HR and Admin </a> </li>
+          <li><a href="admin_page_PS.html"> Purchase and Store </a> </li>
+          <li><a href="admin_page_SM.html"> Sales and Marketting </a> </li>
+          <li><a href="admin_page_accounts.html"> Accounts </a> </li>
+        </ul>
+      </section>
+
+      <section id="Projects">
+        <a href=#Projects><h1> Projects </h1> </a>
+        <ul>
+          <li><a href="admin_page_view_project.html"> View all Projects </a> </li>
+        </ul>
+      </section>
+
+      <section id="Employees">
+        <a href=#Employees><h1> Employees </h1></a>
+        <ul>
+          <li><a href="admin_page_view_employee.html"> View all Employee </a> </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="dropdown_project">
+      <label for="Project"> Employee Name: </label>
+      <button id="Project" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+
+        <li class="dropdown-submenu ">
+          <a class="test" tabindex="-1" href="#">Hrushikesh Pandit </a>
+          <a class="test" tabindex="-1" href="#">Pranav Parwate </a>
+          <a class="test" tabindex="-1" href="#">Himanshu Garud </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="row clearfix">
+       <div class="col-md-12 column">
+         <table class="table table-sm table-dark">
+       <thead>
+         <tr>
+           <th scope="col">Employee ID</th>
+           <th scope="col">Employee Name</th>
+           <th scope="col">Project Name</th>
+           <th scope="col">Total Hours Worked</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <th scope="row">19</th>
+           <td>Hrushikesh Pandit</td>
+           <td>PCB System</td>
+           <td>5</td>
+         </tr>
+         <tr>
+           <th scope="row">20</th>
+           <td>Pranav Parwate</td>
+           <td>Generic Electronic Gadget</td>
+           <td>6</td>
+         </tr>
+         <tr>
+           <th scope="row">21</th>
+           <td>Himanshu Garud</td>
+           <td>HIce Cream Maker</td>
+           <td>1</td>
+         </tr>
+       </tbody>
+     </table>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <script>
+    $(document).ready(function(){
+      $('.dropdown-submenu a.test').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+    });
+    </script>
+
+
+  </body>
+</html>

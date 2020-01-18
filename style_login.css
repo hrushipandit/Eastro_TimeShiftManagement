@@ -8,6 +8,7 @@ h1
   border-style:outset;
   color: #ff751a;
   text-align: center;
+  font-family: 'Saira', sans-serif;
 }
 
 a
@@ -31,6 +32,7 @@ form
   height=80%;
   margin-left: 10%;
   margin-right: 10%;
+  margin-top: 2%;
   padding: 10px;
   border: 3px solid #ff751a;
 }
@@ -38,6 +40,18 @@ form
 .image
 {
   margin-left: 35%;
+}
+
+label
+{
+  font-family: 'Saira', sans-serif;
+}
+
+input
+{
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 1px;
 }
 
 .inputs_user
@@ -61,5 +75,5 @@ form
 .signup
 {
   margin-left: 35%;
-  margin-top: 10%;
+  margin-top: 7%;
 }

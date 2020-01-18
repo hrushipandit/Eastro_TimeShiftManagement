@@ -1,10 +1,56 @@
 .Menu
 {
+  position: absolute;
   border: 3px solid #ffde22;
   width: 20%;
   height: 500px;
   margin-top: 3%;
   background-color: #ffd633;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  left: 100%;
+  top:-5%;
+}
+#title
+{
+  position: absolute;
+  margin-left: 49%;
+  margin-top: 3%;
+  font-family: 'Ibarra Real Nova', serif;
+  color: #ff751a;
+
+}
+
+.Assign_button
+{
+  margin-left: 52%;
+  margin-top: 18%;
+}
+
+.dropdown-Menu{
+  float:right;
+}
+.dropdown_project
+{
+  position: absolute;
+  margin-left: 35%;
+  margin-top: 10%;
+}
+
+.dropdown_assign
+{
+  margin-left: 50%;
+  margin-top: 10%;
+  position: absolute;
+}
+
+.dropdown_employee
+{
+  margin-left: 65%;
+  margin-top: 10%;
+  position: absolute;
+
 }
 
 hr
@@ -25,7 +71,7 @@ hr
 
 img
 {
-  margin-left: 45%;
+  margin-left: 48%;
 }
 
 h1
