@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_signup.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container-fluid">
+      <div class="row align-items-center myrow">
+        <div class="col-md-4 col-sm-6 my-col">
+        </div>
+        <div class="col-md-6 col-sm-4 my-col">
+    <h1 id="title"> Time Shift Management </h1>
+    <div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 my-col">
+    </div>
+  </div>
+    <div class="row myrow">
+      <div class="col-md-2 col-sm-2 my-col">
+      </div>
+      <div class="col-md-8 col-sm-8 my-col" >
+    <div class="content-section">
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+      <img src={{logo}} alt="Smiley face" height=153 width=432>
+
+              <h2 class="Details"> Please enter your Details Below </h2>
+      <div class="inputs">
+        <div class="inputs_user">
+
+          {{ form.fullname.label(class="inputs_user") }}
+          {% if form.fullname.errors %}
+          {{ form.fullname(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.fullname.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %}
+            {{ form.fullname(class="inputs_user") }}
+          {% endif %}
+          </div>
+          <div class="inputs_user">
+          {{ form.email.label(class="inputs_user") }}
+          {% if form.email.errors %}
+          {{ form.email(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+          {% for error in form.email.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+          </div>
+          {% else %}
+          {{ form.email(class="inputs_user") }}
+                  {% endif %}
+          </div>
+          <div class="inputs_user">
+                  {{ form.password.label(class="form-control-label") }}
+                  {% if form.password.errors %}
+                      {{ form.password(class="form-control form-control-lg is-invalid") }}
+                      <div class="invalid-feedback">
+                          {% for error in form.password.errors %}
+                              <span>{{ error }}</span>
+                          {% endfor %}
+                      </div>
+                  {% else %}
+                      {{ form.password(class="inputs_user") }}
+                  {% endif %}
+            </div>
+
+            <div class="inputs_user">
+                    {{ form.confirm_password.label(class="form-control-label") }}
+                    {% if form.confirm_password.errors %}
+                        {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.confirm_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.confirm_password(class="inputs_user") }}
+                    {% endif %}
+              </div>
+
+   </div>
+   <div class="submit">
+      {{ form.submit(class="button") }}
+    </div>
+
+    </form>
+  </div>
+</div>
+<div class="col-md-2 col-sm-2 my-col">
+</div>
+
+
+
+
+</div>
+
+      <div class="row myrow">
+          <div class="col-md-4 col-sm-4 my-col">
+          </div>
+            <div class="col-md-6 col-sm-6 my-col">
+              <div class="border-top pt-3">
+                  <large class="text-muted">
+                      Already Have An Account? <a class="ml-4" href="{{ url_for('login') }}">Log In</a>
+                  </large>
+              </div>
+            </div>
+              <div class="col-md-4 col-sm-4 my-col">
+              </div>
+            </div>
+
+</div>
+
+   </body>
+</html>

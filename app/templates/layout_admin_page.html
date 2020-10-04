@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Saira&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type=text/javascript src="{{
+url_for('static', filename='js/jquery-1.12.1.js') }}"></script>
+<script type=text/javascript src="{{
+url_for('static', filename='js/select-menu.js') }}"></script>
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+
+      <div class="row align-items-center my-row">
+        <div class="col-md-10 col-sm-6 my-col">
+          <img src={{logo}} height=153 width=432 alt="Smiley face">
+        </div>
+
+        <div class="col-md-2 col-sm-6 my-col">
+          <div>
+            <span class="text-nowrap">
+            <a href="{{url_for('logout')}}" class="button_logout" id="logout"> Log Out </a>
+           </span>
+           <div id="user_name_cons">
+           &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{current_user.E_Name}}
+         </div>
+          </div>
+        </div>
+      </div>
+      <hr class="hor_lin">
+      <div class="row align-items-center my-row">
+        <div class="col my-col">
+          {% block content1 %}
+          {% endblock %}
+
+        </div>
+      </div>
+
+      <div class="row align-items-center my-row">
+        <div class="col-md-3  my-col" id="row2col1">
+
+             <div class="wrapper d-flex align-items-stretch">
+               <nav id="sidebar">
+                 <div class="custom-menu">
+                   <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                     <i class="fa fa-bars"></i>
+                     <span class="sr-only">Toggle Menu</span>
+                   </button>
+                  </div>
+                 <div class="p-4 pt-5">
+                   <h1><a href="" class="logo">Admin Page</a></h1>
+                   <ul class="list-unstyled components mb-5">
+                     <li class="active">
+                       <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Assign Tasks</a>
+                       <ul class="collapse list-unstyled" id="homeSubmenu">
+                          <li>
+                              <a href="{{url_for('admin_page_project')}}">Project</a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('admin_page_HR')}}">HR and Admin</a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('admin_page_PS')}}">Purchase and Store</a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('admin_page_SM')}}">Sales and Marketting</a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('admin_page_AC')}}">Accounts</a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('admin_page_other')}}">Other</a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('admin_page_pending')}}">View Pending Tasks</a>
+                          </li>
+                       </ul>
+                     </li>
+
+                     <li>
+                        <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Projects</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu1">
+                          <li>
+                              <a href="{{url_for('admin_page_PL')}}">View all Projects</a>
+                          </li>
+
+                          <li>
+                              <a href="{{url_for('admin_page_add_project')}}">Add new Project</a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('admin_page_delete_project')}}">Delete Project</a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('admin_page_restore_project')}}">Restore Deleted Project</a>
+                          </li>
+                        </ul>
+
+                     </li>
+
+                      <li>
+                        <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Employees</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu2">
+                          <li>
+                              <a href="{{url_for('admin_page_EL')}}">View all Employees</a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('admin_page_delete_employee')}}">Remove Employee</a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('admin_page_restore_employee')}}">Restore Employee</a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('admin_page_password_reset')}}">Reset Employee Password</a>
+                          </li>
+                        </ul>
+                     </li>
+                     <li>
+                       <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TimeShift Tables</a>
+                       <ul class="collapse list-unstyled" id="pageSubmenu3">
+
+                         <li>
+                             <a href="{{url_for('admin_page_ET')}}">Employee Time Shift</a>
+                         </li>
+                         <li>
+                             <a href="{{url_for('admin_page_PT')}}">Project Time Shift</a>
+                         </li>
+                         <li>
+                             <a href="{{url_for('admin_page_Tdate')}}">Time Shift by Date</a>
+                         </li>
+                         <li>
+                             <a href="{{url_for('admin_page_TDelete')}}">Time Shift Delete entries</a>
+                         </li>
+                       </ul>
+                    </li>
+
+                   </ul>
+                 </div>
+               </nav>
+             </div>
+        </div>
+
+        {% block content2 %}
+        {% endblock %}
+      </div>
+    </div>
+
+
+      <script type=text/javascript src="{{
+      url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script type=text/javascript src="{{
+      url_for('static', filename='js/popper.js') }}"></script>
+      <script type=text/javascript src="{{
+      url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      <script type=text/javascript src="{{
+      url_for('static', filename='js/main.js') }}"></script>
+   <script>
+   ('#demo').hierarchySelect();
+ </script>
+  </body>
+</html>

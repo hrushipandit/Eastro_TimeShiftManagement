@@ -1,0 +1,67 @@
+{% extends "layout_admin_page.html" %}
+
+<div id="title">
+  <h1 id="hid">  Add New Project </h1>
+</div>
+
+{% block content1 %}
+
+{% endblock content1%}
+{% block content2 %}
+
+
+
+<form method="POST" action="">
+  {{ form.hidden_tag() }}
+  <h2> Select The Details of the Project</h2>
+  <div class="inputs">
+
+      <div class="inputs_user">
+      {{ form.P_Name.label(class="inputs_user") }}
+      {% if form.P_Name.errors %}
+      {{ form.P_Name(class="form-control form-control-lg is-invalid") }}
+      <div class="invalid-feedback">
+      {% for error in form.P_Name.errors %}
+      <span>{{ error }}</span>
+      {% endfor %}
+      </div>
+      {% else %}
+      {{ form.P_Name(class="inputs_user") }}
+              {% endif %}
+      </div>
+
+      <div class="inputs_user">
+        {{ form.P_id.label(class="inputs_user") }}
+        {% if form.P_id.errors %}
+        {{ form.P_id(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.P_id.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.P_id(class="inputs_user") }}
+        {% endif %}
+        </div>
+
+</div>
+
+<div class="submit">
+  {{ form.submit(class="button") }}
+</div>
+
+</form>
+<div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+
+
+{% endblock content2%}

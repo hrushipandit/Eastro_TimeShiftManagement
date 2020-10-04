@@ -1,0 +1,136 @@
+
+
+.Menu
+{
+  position: absolute;
+  border: 3px solid #ffde22;
+  width: 20%;
+  height: 500px;
+  margin-top: 3%;
+  background-color: #ffd633;
+}
+
+table
+{
+  position: absolute;
+  margin-left: 12%;
+  margin-top: 22%;
+  max-width: 50%
+}
+
+#project_name
+{
+  position: absolute;
+  margin-left: 45%;
+  margin-top:11%;
+}
+
+
+.dropdown-submenu > .dropdown-menu {
+  left: 100%;
+  top:-5%;
+}
+#title
+{
+  position: absolute;
+  margin-left: 47%;
+  margin-top: 3%;
+  font-family: 'Ibarra Real Nova', serif;
+  color: #ff751a;
+
+}
+
+.Assign_button
+{
+  margin-left: 52%;
+  margin-top: 18%;
+}
+
+.dropdown-Menu{
+  float:right;
+}
+.dropdown_project
+{
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 8%;
+}
+
+.dropdown_assign
+{
+  margin-left: 50%;
+  margin-top: 10%;
+  position: absolute;
+}
+
+.dropdown_employee
+{
+  margin-left: 65%;
+  margin-top: 10%;
+  position: absolute;
+
+}
+
+.hor_lin
+{
+  margin-top: 2%;
+  border: 3px solid  #ff751a;
+}
+
+
+#logout
+{
+  color: white;
+  background-color: #ff751a;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5em 0.9em;
+  margin-left: 90%;
+}
+
+img
+{
+  margin-left: 48%;
+}
+
+h1
+{
+  color: black;
+  font-size: 15px;
+}
+
+section
+{
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+section ul
+{
+  display:none;
+  list-style-type: square;
+
+}
+section a
+{
+  text-align: centre;
+  text-decoration: none;
+  font-family: 'Saira', sans-serif;
+}
+
+li
+{
+  font-family: 'Ibarra Real Nova', serif;
+  color: black;
+  font-size: 15px;
+}
+
+section a:hover
+{
+  text-decoration: underline;
+}
+
+section:target ul
+{
+  display:block;
+}

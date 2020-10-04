@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_login.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Saira&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row align-items-center myrow">
+        <div class="col my-col" align="center" >
+          <h1 id="h1"> Time Shift Management </h1>
+        </div>
+      </div>
+      <div class="row align-items-center myrow">
+        <div class="col-md-5 col-sm-5 my-col">
+        </div>
+        <div class="col-md-3 col-sm-3 my-col">
+        <div class="loginfail_flash">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 my-col">
+      </div>
+    </div>
+
+      <div id="box">
+          <div class="image">
+             <img src={{logo}} height=153 width=432 alt="Smiley face">
+          </div>
+
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+      <div class="row align-items-center myrow">
+        <div class="col-md-10 col-sm-6 my-col">
+          <div class="inputs_user">
+            {{ form.email.label(class="form-control-label") }}
+                        {% if form.email.errors %}
+                            {{ form.email(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.email(class="form-control form-control-lg") }}
+                        {% endif %}
+            </div>
+            <div class="inputs_user">
+                    {{ form.password.label(class="form-control-label") }}
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+      <div class="submit">
+      {{ form.submit(class="btn btn-outline-info") }}
+      </div>
+      <div class="signup">
+        <label for="signup_button"> New Employee? Sign up here for new Employees </label>
+        <a href="{{url_for('signup') }}">Signup</a>
+      </div>
+    </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

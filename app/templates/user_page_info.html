@@ -1,0 +1,27 @@
+{% extends "layout_user_page.html" %}
+{% block content1 %}
+
+<div id="title">
+  <h1 id="hid">  My Account </h1>
+</div>
+
+{% endblock content1%}
+{% block content2 %}
+
+<div class="col-md-3 my-col">
+  <div class="current_info">
+     <br /> <br /> <br /> <br /> <br />
+  <h5> &nbsp &nbsp &nbsp &nbsp
+  <label> Name: </label>
+  {{current_user.E_Name}} <br>
+   &nbsp &nbsp &nbsp &nbsp
+  <label> Email: </label>
+  {{current_user.email}}
+  </h5>
+  </div>
+
+
+
+
+</div>
+{% endblock content2%}

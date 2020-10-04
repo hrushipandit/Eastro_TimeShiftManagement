@@ -1,0 +1,102 @@
+
+
+
+
+#title
+{
+  position: absolute;
+  margin-left: 49%;
+  margin-top: 3%;
+  font-family: 'Ibarra Real Nova', serif;
+  color: #ff751a;
+
+}
+
+.Assign_button
+{
+  position: absolute;
+  margin-left: 52%;
+  margin-top: 18%;
+}
+
+.dropdown-Menu{
+  float:right;
+}
+.dropdown_project
+{
+  position: absolute;
+  margin-left: 35%;
+  margin-top: 10%;
+}
+
+.dropdown_assign
+{
+  margin-left: 50%;
+  margin-top: 10%;
+  position: absolute;
+}
+
+.dropdown_employee
+{
+  margin-left: 65%;
+  margin-top: 10%;
+  position: fixed;
+
+}
+
+.hor_lin
+{
+  margin-top: 2%;
+  border: 3px solid  #ff751a;
+}
+
+
+#logout
+{
+  color: white;
+  background-color: #ff751a;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5em 0.9em;
+  margin-left: 90%;
+}
+
+img
+{
+  margin-left: 48%;
+}
+
+h1
+{
+  color: black;
+  font-size: 15px;
+}
+
+section
+{
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+
+section a
+{
+  text-align: centre;
+  text-decoration: none;
+}
+
+li
+{
+  color: black;
+  font-size: 15px;
+}
+
+section a:hover
+{
+  text-decoration: underline;
+}
+
+section:target ul
+{
+  display:block;
+}

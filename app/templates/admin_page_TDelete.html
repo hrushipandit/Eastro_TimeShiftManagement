@@ -1,0 +1,73 @@
+{% extends "layout_admin_page.html" %}
+{% block content1 %}
+
+{% endblock content1%}
+
+{% block content2 %}
+
+        <div class="col-md-9 col-sm-6 my-col">
+          <div class="row clearfix">
+       <div class="col-md-12 column">
+
+          <div style="height:400px;overflow:auto;">
+
+         <table class="table table-sm table-dark">
+       <thead>
+         <tr>
+           <th scope="col">Employee Name</th>
+           <th scope="col">Project Name</th>
+           <th scope="col">Date</th>
+            <th scope="col">Head</th>
+            <th scope="col">House</th>
+            <th scope="col">Time</th>
+           <th scope="col">Description</th>
+           <th scope="col">Field</th>
+           <th scope="col">Delete</th>
+       </thead>
+       <tbody>
+         <tbody>
+
+               {% set loopid = 1 %}
+           {% for items in list2 %}
+          <form method='POST'>
+          <tr>
+              {% set ename= elist[loop.index-1] %}
+              {% set pname= plist[loop.index-1] %}
+              {% set list2var= list2[loop.index-1] %}
+            <td>{{ename.E_Name}}</td>
+
+            <input type="hidden" id="tid" name="tid" value="{{ list2var.T_id }}">
+
+            <td>{{pname.P_Name}}</td>
+            <td>{{items.Date}}</td>
+            <td>{{items.Head}}</td>
+            <td>{{items.House}}</td>
+            <td>{{items.Time}}</td>
+            <td> {{items.Description}}</td>
+            <td> {{items.Field}}</td>
+
+             <td> <input class="btn btn-success" type="submit" name="action" value="delete"></td>
+             </tr>
+              </form>
+
+              {% set loopid = loopid + 1 %}
+              {% endfor %}
+
+         </tbody>
+       </tbody>
+     </table>
+
+
+        </div>
+      </div>
+        </div>
+
+        <form method="POST">
+          {{ form.date }}
+         <input class="btn btn-success" type="submit" name="action" value="search">
+         </form>
+
+        </div>
+
+
+{% endblock content2%}

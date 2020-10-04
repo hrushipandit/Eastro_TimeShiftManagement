@@ -1,0 +1,28 @@
+{% extends "layout_admin_page.html" %}
+{% block content1 %}
+
+<div id="title">
+  <h1 id="hid">  Employee Restore </h1>
+</div>
+
+{% endblock content1%}
+{% block content2 %}
+<form method="POST" onSubmit="return confirm('Are you sure you wish to restore the employee?');">
+        <div class="form-control">
+            <fieldset id="field2">
+              <label for="files"> Employees: </label>
+              <select name="ename" id="ename">
+                <optgroup label="Name">
+                  {% for m in list1 %}
+                  <option value="{{m.E_Name}}">{{ m.E_Name }}</option>
+                  {% endfor %}
+                </optgroup>
+              </select>
+            </fieldset>
+            <input class="btn btn-success" type="submit" name="submit" value="submit" onClick="confSubmit(this.form);">
+          </div>
+
+  </form>
+
+
+{% endblock content2%}

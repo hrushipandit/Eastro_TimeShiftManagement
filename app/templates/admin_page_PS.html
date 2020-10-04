@@ -1,0 +1,85 @@
+{% extends "layout_admin_page.html" %}
+{% block content1 %}
+  <div id="title">
+    <h1 id="hid">  Purchase and Store </h1>
+  </div>
+
+{% endblock content1%}
+
+{% block content2 %}
+
+<form method="POST">
+        <div class="form-control">
+            <fieldset id="field2">
+              <label for="files"> Project: </label>
+              <select name="pnames" id="pnames">
+                <optgroup label="Name">
+                  {% for m in list1 %}
+                  <option value="{{m.P_Name}}">{{ m.P_Name }}</option>
+                  {% endfor %}
+                </optgroup>
+              </select>
+            </fieldset>
+          </div>
+
+          <br>
+
+              <fieldset id="field1">
+                <label for="files"> Field: </label>
+                <select name="field" id="files">
+                  <optgroup label="Purchase">
+                    <option value="Requisition">Requisition</option>
+                    <option value="Quotes">Quotes</option>
+                    <option value="Comparison Negotiations">Comparison Negotiations</option>
+                    <option value="Send Purchase Order to Supplier">Send Purchase Order to Supplier</option>
+                    <option value="Material Follow Up">Material Follow Up</option>
+                    <option value="Medical Test Certificate">Medical Test Certificate</option>
+                    <option value="Material Warrenty Replacement">Material Warrenty Replacement</option>
+                    <option value="Sales Order Approval">Sales Order Approval</option>
+                  </optgroup>
+                  <optgroup label="Stores">
+                    <option value="Dispatched">Dispatched</option>
+                    <option value="Receiving Materials">Receiving Materials</option>
+                    <option value="Receiving inspection Material">Receiving inspection Material</option>
+                  </optgroup>
+                  <optgroup label="Stores-Store Management">
+                    <option value="Good receipt Note">Good receipt Note</option>
+                    <option value="Internal Material Issue">Internal Material Issue</option>
+                    <option value="Logistics Management">Logistics Management</option>
+                    <option value="Maintain Minimum Stock Level">Maintain Minimum Stock Level</option>
+                  </optgroup>
+
+                </select>
+              </fieldset>
+
+              <br>
+
+              <div class="form-control">
+                <fieldset id="field1">
+                  <label for="files">Employee Names: </label>
+                  <select name="enames" id="enames">
+
+                    <optgroup label="Name">
+                      {% for o in list %}
+                      <option value="{{o.E_Name}}">{{ o.E_Name }}</option>
+                      {% endfor %}
+                    </optgroup>
+
+                  </select>
+                </fieldset>
+              </div>
+
+              <br>
+
+          <div class="inputs_user">
+          <div class="col my-col">
+            <div id="submit">
+              <div class="submit">
+                 {{ form.submit(class="button") }}
+               </div>
+            </div>
+          </div>
+        </div>
+        </form>
+
+{% endblock content2%}

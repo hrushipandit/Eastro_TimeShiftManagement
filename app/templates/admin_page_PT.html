@@ -1,0 +1,61 @@
+{% extends "layout_admin_page.html" %}
+{% block content1 %}
+
+          {% endblock content1%}
+          {% block content2 %}
+
+        <div class="col-md-9 col-sm-6 my-col">
+          <div class="row clearfix">
+       <div class="col-md-12 column">
+
+          <div style="height:400px;overflow:auto;">
+         <table class="table table-sm table-dark">
+       <thead>
+         <tr>
+           <th scope="col">Employee Name</th>
+           <th scope="col">Date</th>
+            <th scope="col">Head</th>
+            <th scope="col">House</th>
+            <th scope="col">Time</th>
+           <th scope="col">Description</th>
+           <th scope="col">Field</th>
+       </thead>
+       <tbody>
+         <tbody>
+           {% for items in list2 %}
+              {% set ename= elist[loop.index-1] %}
+          <tr>
+            <td>{{ename.E_Name}}</td>
+            <td>{{items.Date}}</td>
+            <td>{{items.Head}}</td>
+            <td>{{items.House}}</td>
+            <td>{{items.Time}}</td>
+            <td> {{items.Description}}</td>
+            <td> {{items.Field}}</td>
+          </tr>
+              {% endfor %}
+
+         </tbody>
+       </tbody>
+     </table>
+
+        </div>
+      </div>
+        </div>
+        <form method="POST">
+        <div class="form-control">
+            <fieldset id="field2">
+              <select name="pnames" id="pnames">
+                <optgroup label="Name">
+                  {% for m in list1 %}
+                  <option value="{{m.P_Name}}">{{ m.P_Name }}</option>
+                  {% endfor %}
+                </optgroup>
+              </select>
+            </fieldset>
+          </div>
+          <input class="btn btn-success" type="submit" name="submit" value="submit">
+          </form>
+        </div>
+
+        {% endblock content2%}

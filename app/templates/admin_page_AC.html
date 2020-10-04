@@ -1,0 +1,74 @@
+{% extends "layout_admin_page.html" %}
+{% block content1 %}
+  <div id="title">
+    <h1 id="hid">  Accounts </h1>
+  </div>
+
+{% endblock content1%}
+
+{% block content2 %}
+
+<form method="POST">
+        <div class="form-control">
+            <fieldset id="field2">
+              <label for="files"> Project: </label>
+              <select name="pnames" id="pnames">
+                <optgroup label="Name">
+                  {% for m in list1 %}
+                  <option value="{{m.P_Name}}">{{ m.P_Name }}</option>
+                  {% endfor %}
+                </optgroup>
+              </select>
+            </fieldset>
+          </div>
+
+          <br>
+
+              <fieldset id="field1">
+                <label for="files"> Field: </label>
+                <select name="field" id="field">
+                  <optgroup label="Accounts">
+                    <option value="Sales Invoice">Sales Invoice</option>
+                    <option value="Purchase Invoice">Purchase Invoice</option>
+                    <option value="Stock">Stock</option>
+                    <option value="Direct Expense">Direct Expense</option>
+                    <option value="Indirect Expense">Indirect Expense</option>
+                    <option value="Indirect Income">Indirect Income</option>
+                    <option value="Fixed Assets">Fixed Assets</option>
+                    <option value="Investment">Investment</option>
+                    <option value="Current Assets">Current Assets</option>
+                    <option value="Loan">Loan</option>
+                    <option value="Current Liability">Current Liability</option>
+                  </optgroup>
+                </select>
+              </fieldset>
+
+              <br>
+
+              <div class="form-control">
+                <fieldset id="field1">
+                  <label for="files">Employee Names: </label>
+                  <select name="enames" id="enames">
+
+                    <optgroup label="Name">
+                      {% for o in list %}
+                      <option value="{{o.E_Name}}">{{ o.E_Name }}</option>
+                      {% endfor %}
+                    </optgroup>
+
+                  </select>
+                </fieldset>
+              </div>
+
+              <br>
+          <div class="inputs_user">
+          <div class="col my-col">
+            <div id="submit">
+              <div class="submit">
+                 {{ form.submit(class="button") }}
+               </div>
+            </div>
+          </div>
+        </div>
+        </form>
+    {% endblock content2%}

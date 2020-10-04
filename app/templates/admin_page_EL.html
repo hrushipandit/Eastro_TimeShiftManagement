@@ -1,0 +1,35 @@
+{% extends "layout_admin_page.html" %}
+{% block content1 %}
+          {% endblock content1%}
+          {% block content2 %}
+
+        <div class="col-md-9 col-sm-6 my-col">
+          <div class="row clearfix">
+       <div class="col-md-12 column">
+        <div style="height:400px;overflow:auto;">
+         <table class="table table-sm table-dark">
+
+       <thead>
+         <tr>
+           <th scope="col">Employee ID</th>
+           <th scope="col">Employee Name</th>
+           <th scope="col">E-Mail</th>
+         </tr>
+       </thead>
+          <tbody style="height: 100px; overflow: auto">
+         {% for items in liste %}
+         <tr>
+           <th scope="row">{{items.id}}</th>
+           <td>{{items.E_Name}}</td>
+           <td>{{items.email}}</td>
+         </tr>
+         {% endfor %}
+       </tbody>
+     </table>
+
+        </div>
+      </div>
+        </div>
+        </div>
+
+        {% endblock content2%}

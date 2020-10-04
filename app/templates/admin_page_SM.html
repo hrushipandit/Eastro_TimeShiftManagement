@@ -1,0 +1,73 @@
+{% extends "layout_admin_page.html" %}
+{% block content1 %}
+  <div id="title">
+    <h1 id="hid">  Sales and Marketting </h1>
+  </div>
+
+{% endblock content1%}
+
+{% block content2 %}
+
+<form method="POST">
+        <div class="form-control">
+            <fieldset id="field2">
+              <label for="files"> Project: </label>
+              <select name="pnames" id="pnames">
+                <optgroup label="Name">
+                  {% for m in list1 %}
+                  <option value="{{m.P_Name}}">{{ m.P_Name }}</option>
+                  {% endfor %}
+                </optgroup>
+              </select>
+            </fieldset>
+          </div>
+
+          <br>
+
+                <fieldset id="field1">
+                  <label for="field"> Field: </label>
+                  <select name="field" id="field">
+                    <optgroup label="Sales and Marketting">
+                      <option value="Enquiry">Enquiry</option>
+                      <option value="Trading">Trading</option>
+                      <option value="Service Order">Service Order</option>
+                      <option value="Project Quotations">Project Quotations</option>
+                      <option value="Follow up quotations">Follow up quotations</option>
+                      <option value="Payment Follow up">Payment Follow up</option>
+                      <option value="Performance Invoice">Performance Invoice</option>
+                      <option value="Vendor Registration">Vendor Registration</option>
+                      <option value="Update Po sheet and EMS sheet">Update Po sheet and EMS sheet</option>
+                      <option value="Check Indiamart and then follow up">Check Indiamart and then follow up</option>
+                    </optgroup>
+                  </select>
+                </fieldset>
+
+                <br>
+
+              <div class="form-control">
+                <fieldset id="field1">
+                  <label for="files">Employee Names: </label>
+                  <select name="enames" id="enames">
+
+                    <optgroup label="Name">
+                      {% for o in list %}
+                      <option value="{{o.E_Name}}">{{ o.E_Name }}</option>
+                      {% endfor %}
+                    </optgroup>
+
+                  </select>
+                </fieldset>
+              </div>
+
+              <br>
+          <div class="inputs_user">
+          <div class="col my-col">
+            <div id="submit">
+              <div class="submit">
+                 {{ form.submit(class="button") }}
+               </div>
+            </div>
+          </div>
+        </div>
+        </form>
+  {% endblock content2%}

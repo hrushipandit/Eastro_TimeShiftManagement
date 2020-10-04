@@ -1,0 +1,42 @@
+{% extends "layout_user_page.html" %}
+{% block content1 %}
+
+{% endblock content1%}
+{% block content2 %}
+
+<div class="formwrapper">
+  <form method="POST" action="">
+    <div class="inputs_user">
+      <div class="form-control">
+          <fieldset id="field2">
+            <select name="pnames" id="pnames">
+              <optgroup label="Name">
+                {% for m in list1 %}
+                <option value="{{m.P_Name}}">{{ m.P_Name }}</option>
+                {% endfor %}
+              </optgroup>
+            </select>
+          </fieldset>
+        </div>
+      {{ form.csrf_token }}
+      {{form.date.label}}
+      {{form.date}}
+      {{form.Head.label}}
+      {{form.Head}}
+      <br>
+      {{form.House.label}}
+      {{form.House}}
+      {{form.Time.label}}
+      {{form.Time}}
+      {{form.Description.label}}
+      {{form.Description}}
+      {{form.Field.label}}
+      {{form.Field}}
+
+                <div class="submit">
+                {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+  </form>
+</div>
+
+{% endblock content2%}

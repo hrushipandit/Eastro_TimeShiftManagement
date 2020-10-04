@@ -1,0 +1,84 @@
+#h1
+{
+
+  width: 500px;
+  padding: 10px;
+  border: 10px solid #ffde22;
+  border-style:outset;
+  color: #ff751a;
+  text-align: center;
+  font-family: 'Saira', sans-serif;
+  white-space: nowrap;
+}
+
+a
+{
+  color: white;
+  background-color: #ff751a;
+  text-transform: uppercase;
+  text-decoration: underline;
+  padding: 0.5em 0.9em;
+}
+
+a:hover
+{
+  background-color: #555;
+  cursor: pointer;
+}
+.myrow1
+{
+  border: 1px solid black;
+}
+
+#box
+{
+  width:900px;
+  height:450px;
+  margin-left: 17%;
+  margin-right: 20%;
+  margin-top: 2%;
+  padding: 10px;
+  border: 3px solid #ff751a;
+}
+
+.image
+{
+  margin-left: 35%;
+}
+
+label
+{
+  font-family: 'Saira', sans-serif;
+}
+
+input
+{
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 1px;
+}
+
+.inputs_user
+{
+  margin-left:40%;
+  font-size: 23px;
+}
+.inputs_password
+{
+  margin-top: 1%;
+  margin-left: 40%;
+  font-size: 23px;
+}
+
+.submit
+{
+  margin-left: 65%;
+  margin-top: 2%;
+}
+
+.signup
+{
+  margin-left: 35%;
+  margin-top: 7%;
+  white-space: nowrap;
+}

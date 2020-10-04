@@ -1,0 +1,58 @@
+{% extends "layout_user_page.html" %}
+{% block content1 %}
+
+{% endblock content1%}
+
+{% block content2 %}
+
+<div class="col-md-9 col-sm-6 my-col">
+  <div class="row clearfix">
+<div class="col-md-12 column">
+  <div style="height:400px;overflow:auto;">
+ <table class="table table-sm table-dark">
+<thead>
+ <tr>
+   <th scope="col">Project Name</th>
+   <th scope="col">Date</th>
+   <th scope="col">Head</th>
+   <th scope="col">House</th>
+   <th scope="col">Time</th>
+   <th scope="col">Description</th>
+   <th scope="col">Field</th>
+      <th scope="col"></th>
+ </tr>
+</thead>
+<tbody>
+    {% set loopid = 1 %}
+  {% for items in liste %}
+  <form method="POST">
+ <tr>
+   {% set pname= listp_name[loop.index-1] %}
+   {% set field= liste[loop.index-1] %}
+   <input type="hidden" id="tid" name="tid" value="{{ field.T_id }}">
+
+   <th scope="row" id="name" name="name" value="{{pname.P_Name}}">{{pname.P_Name}}</th>
+   <input type="hidden" id="index" name="index" value="{{ pname.P_Name }}">
+   <td>{{ form.date }}</td>
+    <td>{{ form.Head }} </td>
+    <td>  {{form.House}}</td>
+    <td> {{form.Time}} </td>
+   <td> {{form. Description}} </td>
+   <td id="field" name="field" value="{{field.Field}}">{{ field.Field }}</td>
+      <input type="hidden" id="index1" name="index1" value="{{ field.Field }}">
+   <td> <input class="btn btn-success" type="submit" name="submit" value="submit"></td>
+ </tr>
+</form>
+    {% set loopid = loopid + 1 %}
+    {% endfor %}
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock content2%}
